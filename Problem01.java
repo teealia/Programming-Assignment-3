@@ -17,9 +17,9 @@ public class Problem01 {
         @Override
         public synchronized void run() {
             // System.out.println("entering thread");
-
+            present temp = new present(currentId);
             if (altTask==1){ // adding gifts to the ordered chain
-                present temp = new present(currentId);
+
                 if(presents.contains( temp )){
                     LinkedList.add(temp);
                     presents.remove(temp);
@@ -30,7 +30,6 @@ public class Problem01 {
             }
 
             if (altTask==2){ // writing “Thank you” cards
-                present temp = new present(currentId);
                 if(!LinkedList.isEmpty()){
                     LinkedList.remove(temp);
                     numThankYous++;
@@ -58,7 +57,7 @@ public class Problem01 {
         System.out.println("How many Presents?\n");
         n = sc.nextInt(); // number of Guests
 
-        System.out.println("Servants are on it!");
+
         for (int i=0; i<n; i++){
             presents.add(new present(currentId));
             currentId++;
@@ -67,7 +66,7 @@ public class Problem01 {
 //            servants[y] = new Thread(tasks);
 //            servants[y].start();
 //        }
-
+        System.out.println("Preparation done(: Servants are on it!");
         final long startTime = System.currentTimeMillis();
 
         currentId = 0;
