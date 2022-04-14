@@ -22,8 +22,11 @@ to compile: run command javac Problem01.java java Problem01
 Problem 2)
 
 When running, this program will ask how many hourly reports you want to run, enter this number!
-My implementation is using an ArrayList as storage
-Joining my threads after I start them ensures that my sensors do not overstep each other, the eight readings happen in one run of the loop and are ordered by reads
+My implementation is using an ArrayList that all threads have access to as storage
+I have 60 runs (60 minutes or one hours) of each of my 8 sensors reading a temperature (-100 to 70 degrees) and reporting that to the ArrayList, thats 480 readings in total
+Joining my threads after I start them ensures that my sensors do not overstep each other, the eight readings happen in one run of the loop and are ordered by reads. One minute's reads won't happen before another minute's; The first 8 temp reads in my array list are from the first minute and so on. 
+After this the report will be compiled from whats stored in the arraylist
+
 
 This will return the top 5 (unique )hourly temps, top 5 lowest, and the interval of the highest ten min interval temp difference (1-6)
 this will loop through however many reports you inputted
