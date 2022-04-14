@@ -43,7 +43,7 @@ public class Problem01 {
             }
         }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException {
         myrun tasks = new myrun();
         Thread [] servants = new Thread[4];
         Scanner sc = new Scanner(System.in);
@@ -63,13 +63,18 @@ public class Problem01 {
             presents.add(new present(currentId));
             currentId++;
         }
+//        for (int y =0; y<4; y++){
+//            servants[y] = new Thread(tasks);
+//            servants[y].start();
+//        }
 
         final long startTime = System.currentTimeMillis();
 
         currentId = 0;
-        while (numThankYous<n){
+        while (!presents.isEmpty()){
             servants[t] = new Thread(tasks);
             servants[t].start();
+            servants[t].join();
 
             if (t==3) t=0;
             else t++;
