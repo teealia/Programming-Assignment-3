@@ -14,6 +14,7 @@ When running, this program will ask how many presents (enter num of presents her
 Our threads finish their tasks before another thread can finish its own task, this is implemented using join() and also with the ConcurrentLinkedQueue.
 
 500,000 presents will compile and run , its just a tad over 60 seconds ): It can do it, just be patient!
+
 to compile: run command javac Problem01.java java Problem01
 
 
@@ -26,4 +27,5 @@ Joining my threads after I start them ensures that my sensors do not overstep ea
 
 This will return the top 5 (unique )hourly temps, top 5 lowest, and the interval of the highest ten min interval temp difference (1-6)
 this will loop through however many reports you inputted
+
 to compile: run command javac Problem2.java java Problem2
